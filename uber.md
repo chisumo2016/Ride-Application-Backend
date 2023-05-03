@@ -12,3 +12,7 @@
     . Define all migration 
 
 ##  MASS ASSIGMENT
+        . add the mass assigment to all model using guarded
+
+## ADD RELATIONSHIP
+    . start with User Model
