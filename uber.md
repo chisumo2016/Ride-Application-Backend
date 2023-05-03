@@ -4,3 +4,7 @@
 ## SETTING UP THE BACKEND
     . Create a project
             composer create-project laravel/laravel .
+
+## CREATE MODEL DRIVER AND TRIP
+       php artisan make:model Driver --migration 
+       php artisan make:model Trip --migration 
