@@ -49,3 +49,15 @@
     SO FAR SO GOOO
         - We have an abilitty to login in with tokenn associate with a particular user.
 
+## DRIVER CONTROLLER
+    . Create a Driver Controller
+        php artisan make:controller DriverController
+    . Add the endpoint for driver
+    .Add logic inside the controoller
+    .TEST ENDPOINT
+        http GET backend.test/api/driver 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt'
+        http POST backend.test/api/driver 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt' Accept:application/json
+
+    . Add data
+            http POST backend.test/api/driver 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt' Accept:application/json color=White licence_plate=FAL23J make=Honda model=Accord name=Bernard year=2013
+
