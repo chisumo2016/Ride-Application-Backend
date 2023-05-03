@@ -8,3 +8,7 @@
 ## CREATE MODEL DRIVER AND TRIP
        php artisan make:model Driver --migration 
        php artisan make:model Trip --migration 
+## DEFINE MIGRATION 
+    . Define all migration 
+
+##  MASS ASSIGMENT
