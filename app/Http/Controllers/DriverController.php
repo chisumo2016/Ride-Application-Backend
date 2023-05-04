@@ -15,7 +15,7 @@ class DriverController extends Controller
         return $user;
     }
 
-    public  function  create(Request $request)
+    public  function  store(Request $request)
     {
         $request->validate([
            'year' => 'required|numeric|between:2010,2014',

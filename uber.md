@@ -61,3 +61,6 @@
     . Add data
             http POST backend.test/api/driver 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt' Accept:application/json color=White licence_plate=FAL23J make=Honda model=Accord name=Bernard year=2013
 
+## CREATE ROUTE FOR TRIP AND CONTROLLER
+    - Create a trip controller
+         php artisan make:controller TripController
