@@ -64,3 +64,19 @@
 ## CREATE ROUTE FOR TRIP AND CONTROLLER
     - Create a trip controller
          php artisan make:controller TripController
+    - Create the api endpoint for trip
+    - Implement the logic inside the controller 
+    - TESTED
+
+## ADD THREE ROUTE INSIDE THE TRIP AS POST
+    - please add three route 
+        . a driver accept a trip
+        . a driver has started taking a passenger too their destination
+        . a driver has ended a trip
+        . update the driver's current location
+    - These will be fired via events tthrough websocket 
+
+    - TEST THIS END POINT 
+            php artisan migrate:refresh --path=/database/migrations/2023_05_03_065517_create_trips_table.php
+            http POST backend.test/api/trip 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt' destination_name=Startbucks destination:='{"lat":12.325336, "lng":23.359230}' origin:='{"lat": 35.293583, "lng":39.203905}'
+            http GET backend.test/api/trip/1 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt'
