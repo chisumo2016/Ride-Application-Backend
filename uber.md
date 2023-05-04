@@ -80,3 +80,43 @@
             php artisan migrate:refresh --path=/database/migrations/2023_05_03_065517_create_trips_table.php
             http POST backend.test/api/trip 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt' destination_name=Startbucks destination:='{"lat":12.325336, "lng":23.359230}' origin:='{"lat": 35.293583, "lng":39.203905}'
             http GET backend.test/api/trip/1 'Authorization: Bearer 1|RhPEXtCOvv9xY5sB7CKYdJzQZ6So5M0zEPV5Hemt'
+
+    
+## CREATE AN EVENTS IN WEBSOCKETS 
+    - We need to push an event which can consumed by real time event
+        eccept: Passenger to get the notificcaation , let him/her how is coming to collect 
+            1: Dispatch an event
+                php artisan make:event TripAcceptedEvent
+                php artisan make:event TripStartedEvent
+                php artisan make:event TripEndedEvent
+                php artisan make:event TripLocationUpdatedEvent
+
+    - We have four events in the Envents folder
+
+            2: Second Package which can be consumed by front end .
+                https://github.com/soketi/soketi
+                https://beyondco.de/docs/laravel-websockets/getting-started/introduction
+                https://github.com/beyondcode/laravel-websockets
+
+                composer require beyondcode/laravel-websockets --with-all-dependencies
+                php artisan vendor:publish --provider="BeyondCode\LaravelWebSockets\WebSocketsServiceProvider" --tag="migrations"
+                php artisan migrate
+                composer require pusher/pusher-php-server "~3.0" or
+                composer require pusher/pusher-php-server
+                 php artisan websockets:serve  
+    - SET UP THE FOLLOWING IN .env filee
+                BROADCAST_DRIVER=pusher
+            
+                PUSHER_APP_ID=laravel
+                PUSHER_APP_KEY=mykey
+                PUSHER_APP_SECRET=secret
+                PUSHER_HOST=127.0.0.1
+                PUSHER_PORT=6001
+                PUSHER_SCHEME=http
+
+            TEST  php artisan websockets:serve    OK
+
+    - Websocket will not push that , unless we have a client attach to them
+    - Attach the front end to the backend .
+    FINISH THE BACKEND
+    
